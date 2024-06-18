@@ -1,3 +1,22 @@
 node_modules
 build
 .env
+
+model checkIn {
+  id String @id @default(uuid())
+  created_at DateTime @default(now())          // data que o usuario fez o checkin
+  valitated_at DateTime?                       // token esta validado
+
+  @@map("check_ins")
+}
+
+model Gym {
+  id String @id @default(uuid())
+  title String
+  description String?
+  phone String?
+  latitude Decimal
+  longitube Decimal
+
+  @@map("gyms")
+}
